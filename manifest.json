@@ -12,6 +12,9 @@
     "service_worker": "background.js",
     "type": "module"
   },
+  "permissions": [
+    "notifications"
+  ],
   "content_scripts": [
     {
       "matches": ["https://*/*"],

@@ -53,8 +53,7 @@ async function myFunction() {
             const txt = await response.text()
 
             if (txt.includes('www.znanylekarz.pl')) {
-                chrome.action.setBadgeText({text: null})
-                chrome.action.setIcon({path: { "19": "/check-19.png"}})
+                onSuccess()
             }
         }
     } catch (error) {
@@ -69,4 +68,17 @@ async function myFunction() {
         }
         chrome.action.setIcon({path: "/check_red-19.png"})
     }
+}
+
+function onSuccess() {
+    const options = {
+        type: "basic",
+        iconUrl: "./check-19.png",
+        title: "Popup.js",
+        message: "Hello from popup.js!"
+    };
+
+    chrome.notifications.create(options);
+    chrome.action.setBadgeText({text: null})
+    chrome.action.setIcon({path: { "19": "/check-19.png"}})
 }

@@ -1,5 +1,5 @@
-document.querySelector('#activate').addEventListener("click", activate);
-document.querySelector('#deactivate').addEventListener("click", deactivate);
+document.querySelector('#activate')?.addEventListener("click", activate);
+document.querySelector('#deactivate')?.addEventListener("click", deactivate);
 
 async function activate() {
     chrome.action.setIcon({path: { "19": "/check_yellow-19.png"}})
